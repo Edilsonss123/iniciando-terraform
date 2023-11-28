@@ -1,0 +1,14 @@
+#https://developer.hashicorp.com/terraform/language/resources/provisioners/syntax
+Provisionadores são  para modelar ações específicas na máquina local ou em uma máquina remota para preparar servidores ou outros objetos de infraestrutura a serviço. 
+
+resource "aws_instance" "web" {
+  # ...
+
+  provisioner "local-exec" {
+    command = "echo The server's IP address is ${self.private_ip}"
+  }
+}
+
+Expressões em provisionerblocos não podem se referir ao seu recurso pai por nome. Em vez disso, eles podem usar o especial selfobjeto.
+
+O selfobject representa o recurso pai do provisionador e tem todos os atributos desse recurso. Por exemplo, use self.public_ippara fazer referência a um aws_instancede public_ipatributo. 

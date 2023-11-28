@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  terraform:
+    container_name: terraform
+    image: hashicorp/terraform
+    working_dir: /infra
+    volumes:
+      - .:/infra
+    environment:
+      - ARM_CLIENT_ID=${ARM_CLIENT_ID}
+      - ARM_CLIENT_SECRET=${ARM_CLIENT_SECRET}
+      - ARM_TENANT_ID=${ARM_TENANT_ID}
+      - ARM_SUBSCRIPTION_ID=${ARM_SUBSCRIPTION_ID}

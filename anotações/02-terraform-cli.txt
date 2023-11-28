@@ -1,0 +1,47 @@
+
+# CLI -> https://developer.hashicorp.com/terraform/cli
+
+- terraform --help
+
+- comandos principais
+    - terraform init -> Prepare seu diretório de trabalho para outros comandos
+    
+    - terraform validate -> Verifique se a configuração é válida, sem erros
+    
+    - terraform plan -> Mostrar alterações exigidas pela configuração atual
+        - ao gerar o plano recomendado salvar em um arquivo para que seja especificado o plano no momento do apply -> terraform plan -out plan.out
+        - é possivel criar um plano de destruição -> terraform plan -out plan-destroy.out -destroy
+
+    - terraform apply -> Criar ou atualizar infraestrutura
+        - será preciso confirmar o plano de execução gerado
+        - para automação pode ser utilizado o -auto-approve -> terraform apply -auto-approve
+        - para executar utilizando plano de execução -> terraform apply plan.out
+
+    - terraform destroy -> Destruir infraestrutura criada anteriormente
+    
+    - terraform fmt -> Formata os arquivos terraform para estilo padrão
+        - terraform fmt -check -> informa os arquivos que ele vai alterar
+        - terraform fmt -diff -> exibir as alterações realizadas nos arquivos
+        - terraform fmt -recursive -> formatar os arquivos em subpastas de forma recursiva
+    
+    - terraform force-unlock {ID_LOCK}-> desbloqueia o state quando se encontra bloqueado
+
+    - terraform -version -> Recuperar versão terraform
+
+    - terraform get {NOME_MODULES} -> faz o download dos modules utilizados para inspecionamento 
+
+- para saber mais sobre os comandos é possivel dá um help em cada comando
+    - terraform {command} -help
+
+- para executar o terraform no docker
+    - docker-compose -f docker-compose.yml  run terraform {command}
+
+- para listar commandos do workspace
+    - docker-compose -f docker-compose.yml  run terraform workspace --help
+
+- para executar commandos do workspace
+    - docker-compose -f docker-compose.yml  run terraform workspace {command}
+
+- Este comando fornece um console de linha de comando interativo para avaliar e experimentando expressões
+    - docker-compose -f docker-compose.yml  run terraform console
+    - https://developer.hashicorp.com/terraform/cli/commands/console

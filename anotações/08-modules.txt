@@ -1,0 +1,9 @@
+#https://developer.hashicorp.com/terraform/language/modules/develop
+Um módulo é um contêiner para vários recursos usados ​​juntos. Você pode usar módulos para criar abstrações leves, para que possa descreva sua infraestrutura em termos de arquitetura, 
+em vez de diretamente em termos de objetos físicos. 
+O .tfarquivos em seu diretório de trabalho quando você executa terraform plan ou terraform applyjuntos formam a raiz módulo. Esse módulo pode chamar outros módulos e conectá-los passando valores de saída de um para valores de entrada de outro.
+
+Para aprender como usar módulos, consulte a seção Configuração de módulos . Esta seção trata da criação de módulos reutilizáveis ​​que outras configurações pode incluir o uso moduleblocos. 
+Para acessar os dados dos modulos é preciso que tenha colocado no outputs
+
+    - terraform get {NOME_MODULES} -> faz o download dos modules utilizados para inspecionamento 

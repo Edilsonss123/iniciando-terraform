@@ -1,0 +1,8 @@
+#https://registry.terraform.io/providers/serverscom/serverscom/latest/docs/guides/user-data
+
+Utilizando para quando é necessário executar script na inicialização da maquina
+Dados do usuário a serem fornecidos ao iniciar a instância. 
+Não passe dados compactados com gzip por meio deste argumento; 
+ver user_data_base64em vez de. 
+As atualizações neste campo acionarão uma parada/início da instância do EC2 por padrão. 
+Se o user_data_replace_on_changeestiver definido, as atualizações neste campo acionarão uma destruição e uma recriação. 

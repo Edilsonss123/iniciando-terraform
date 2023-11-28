@@ -1,0 +1,20 @@
+#terraform docker
+    - https://londonappdeveloper.com/how-to-use-terraform-via-docker-compose-for-professional-developers/
+
+#documentação
+    - language
+        - https://developer.hashicorp.com/terraform/language
+    - providers
+        - https://registry.terraform.io/browse/providers
+    - modules
+        - https://registry.terraform.io/browse/modules
+    - cli
+        - https://developer.hashicorp.com/terraform/cli
+    - import recurso criado fora do terraform
+        - https://developer.hashicorp.com/terraform/language/import
+        
+#PIPELINE
+    - os arquivos de state, plan e a pasta .terraform devem ser especidas no .gitignore
+
+# ATE PASTA 13-pipelines é do curso -> https://www.udemy.com/course/terraform-do-basico-ao-avancado
+# 14-site-estatico-> https://dev.to/aws-builders/how-to-create-a-simple-static-amazon-s3-website-using-terraform-43hc

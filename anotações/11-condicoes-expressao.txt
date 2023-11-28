@@ -1,0 +1,26 @@
+#Expressions: https://developer.hashicorp.com/terraform/language/expressions
+    - Conditional Expressions: https://developer.hashicorp.com/terraform/language/expressions/conditionals
+        - expresão simples -> condition ? true_val : false_val
+
+    - For Expressions: https://developer.hashicorp.com/terraform/language/expressions/for
+        - for saida em array [for s in var.list : upper(s)]
+        - for saidaem objeto {for s in var.list : s => upper(s)}
+
+    - Splat Expressions: https://developer.hashicorp.com/terraform/language/expressions/splat
+        - Uma expressão splat fornece uma maneira mais concisa de expressar um operação que de outra forma poderia ser realizada com um forexpressão. 
+        - Os padrões de expressão splat mostrados acima aplicam-se apenas a listas, conjuntos e tuplas. 
+        - [for o in var.list : o.id] -> var.list[*].id
+    
+    - Dynamic Blocks: https://developer.hashicorp.com/terraform/language/expressions/dynamic-blocks
+        - Permitem criar blocos aninhados dentro de um recurso com base em uma variável . 
+        - Em vez de criar um recurso para cada item em um mapa, como faz o atributo for_each, os blocos dinâmicos criam blocos aninhados dentro de um recurso para cada item em um mapa ou lista
+        - dynamic "setting" {
+            for_each = var.settings
+            content {
+            namespace = setting.value["namespace"]
+            name = setting.value["name"]
+            value = setting.value["value"]
+        }
+    - Este comando fornece um console de linha de comando interativo para avaliar e experimentando expressões
+        - docker-compose -f docker-compose.yml  run terraform console
+        - https://developer.hashicorp.com/terraform/cli/commands/console

@@ -1,0 +1,13 @@
+# https://developer.hashicorp.com/terraform/language/values/variables
+    - O terraform não aceita utilização de veriáveis dentro do bloco terraform
+    - Exemplo de declaração
+        variable "nomeVariavel" {
+            description = "Região onde os recursos serão criados na Azure"
+            type = string
+            default = "West Europe"
+        }
+    
+    - Exemplo de utilização
+        var.nomeVariavel
+    - O valor default pode ser omitido e definido atraves de variaveis de ambieente
+        export TF_VAR_{NOME VARIAVEL}

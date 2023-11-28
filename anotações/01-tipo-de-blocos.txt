@@ -1,0 +1,30 @@
+
+# tipos de blocos
+    - terraform
+        - parametros
+            - required_version
+            - required_provider ->  especifica todos os provedores exigidos pelo módulo atual
+            - backend
+            - cloud
+            - experiments -> habilitar uso de feature ainda em testes
+            - provider_meta -> enviar metadatas para o provider
+
+    - providers
+
+    - resource -> cria recursos no provider
+
+    - data
+
+    - module
+
+    - variable
+
+    - output
+
+    - locals
+
+#exemplo
+
+[nomeBloco] {
+
+}

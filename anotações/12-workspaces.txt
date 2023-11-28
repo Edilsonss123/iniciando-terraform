@@ -1,0 +1,12 @@
+#https://developer.hashicorp.com/terraform/cli/workspaces
+    - usar quando estiver configuração distintas dependendo do ambiente para o mesmo backend
+    - Cada diretório de trabalho inicializado começa com um espaço de trabalho chamado default.
+    - Quando os embientes necessitarem de credencias diferentes não será possivel utilizar workspaces
+    - Sempre consultar se o backend suporta o uso de workspaces
+    - Para acessar o workspace -> terraform.workspace
+    - para listar commandos do workspace
+        - docker-compose -f docker-compose.yml  run terraform workspace --help
+    - para executar commandos do workspace
+        - docker-compose -f docker-compose.yml  run terraform workspace {command}
+        - show -> exibir o workspace atual
+        - select {NAME WORKSPACE}-> defini o workspace atual

@@ -1,0 +1,3 @@
+[submodule "01-primeiro-teste/13-pipelines"]
+	path = 01-primeiro-teste/13-pipelines
+	url = https://github.com/Edilsonss123/pipeline-terraform-aws

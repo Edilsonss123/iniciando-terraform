@@ -1,0 +1,20 @@
+#State terraform
+- Armazenar o estado sobre sua infraestrutura gerenciada e configuração. Este estado é usado pelo Terraform para mapear o mundo real recursos para sua configuração, acompanhe os metadados e melhore desempenho para grandes infraestruturas. 
+
+    - terraform state list -> lista os recursos do state atual
+    - terraform state show {NOME_RECURSO_ATUAL} -> lista configuracao do recurso
+    - terraform state mv {NOME_RECURSO_ATUAL} {NOVO_NOME_RECURSO} 
+    - terraform state pull > {NOME_ARQUIVO} -> baixa state remoto, passando o nome do arquivo que será gerado localmente
+    - terraform state push -force {NOME_ARQUIVO} -> envia um state local para o remoto, para foçar o push é possivel utilizar o -force
+    - terraform state replace-provider {NOME_PROVIDER_ATUAL} {NOVO_NOME_PROVIDER} -> altera o provider do recurso que esta sendo utilizado(algo bem raro de utilizar)
+    - terraform state rm {NOME_RECURSO}-> remover um recurso do gerenciamento do terraform sem que que o terraform destrua o recurso criado
+    - terraform import {NOME_RECURSO_TERRAFORM} {NOME_RECURSO_EXTERNO} -> vincular um recurso externo a um recurso mapeado no terraforma, para cada tipo de recurso tem na documentação a forma de fazer o import
+    - terraform refresh -> atualiza o arquivo state
+
+- Ao alterar configuração do backend será preciso rodar o terraform init:
+    - terraform init -reconfigure -> criada estado novo com a configuração informada no backend, perde historico
+    - terraform init -migrate-state -> migrará o state antigo para a configuração atual do backend, pedira confirmação para executar, mantem o historico
+    - terraform init -force-copy -> migrará o state antigo para a configuração atual do backend, não pedi confirmação para executar mantem o historico
+    - terraform init  -backend-config={NOME_ARQUIVO_BACKEND}.hcl -> como o terraform não permite variáveis dentro do bloco terraform para conseguir utilizar a mesma estrutura
+    mas separado os states de acordo com cada ambiente de utilização é possivel informar o bloco backend vazio e criar arquivos especificos para cada ambiente e no momento de criar
+    o recurso informar o arquivo que ele deverá utilizar

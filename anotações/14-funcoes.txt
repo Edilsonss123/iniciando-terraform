@@ -1,0 +1,3 @@
+#https://developer.hashicorp.com/terraform/language/functions
+    - A linguagem Terraform inclui diversas funções integradas que você pode chamar de dentro de expressões para transformar e combinar valores. O geral sintaxe para chamadas de função é um nome de função seguido por caracteres separados por vírgula argumentos entre parênteses
+    - possui mais de 100 funcções, sendo que é possivel testar através do terraform console -> docker-compose -f docker-compose.yml  run terraform console
