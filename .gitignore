@@ -1,5 +1,6 @@
 credenciais/*
 **/.terraform/
+**/.terraform*
 
 # .tfstate files
 **/*.tfstate
